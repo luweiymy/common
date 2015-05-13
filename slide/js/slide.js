@@ -1,5 +1,6 @@
 /**
 	轮播图
+	利用的是js加载页面
 */
 $(document).ready(function(){		
 	var count = 4,n = 1;//count为图片的总数
@@ -10,7 +11,6 @@ $(document).ready(function(){
 		if(curc < count){
 			curc++;
 			$(".slideimg").find("li").attr("value", curc);
-			$("#slide").find("img").animate({left:'250px'});
 			$("#slide").find("img").attr("src","../images/"+ curc +".jpg");	
 		}else if(curc == count){
 			curc = 0;
