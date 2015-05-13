@@ -1,0 +1,73 @@
+<!-- 此页面解决了复选框可以选择多行且选择之后可以再选 
+多行背景变色
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>checkbox</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		table{
+			border-collapse: collapse;
+		}
+		td{
+			border-bottom: 1px solid #cacaca;
+			width: 100px;
+		}
+		.red{
+			background-color: red
+		}
+	</style>
+</head>
+<body>
+<table>
+	<thead>
+		<td>序号</td>
+		<td>姓名</td>
+		<td>性别</td>
+		<td>年龄</td>
+		<td>住址</td>
+	</thead>
+		
+	<tr >
+		<td><input type="checkbox" /></td>
+		<td>XX</td>
+		<td>男</td>
+		<td>22</td>
+		<td>北京</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" /></td>
+		<td>XX</td>
+		<td>男</td>
+		<td>22</td>
+		<td>北京</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" /></td>
+		<td>XX</td>
+		<td>男</td>
+		<td>22</td>
+		<td>北京</td>
+	</tr>
+</table>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var checkbox = $("input[type='checkbox']");
+		$("td").click(function(){
+			var tr = $(this).parent("tr");
+			var checked = tr.find(checkbox);
+			if (!tr.hasClass("red")) {//如果点击td一行会选中且复选框会选中，背景颜色改变，
+				tr.addClass("red");
+				checked.attr("checked","checked");
+				checked[0].checked = true
+			}else{
+				tr.removeClass("red");
+				checked.removeAttr("checked");
+			}
+		})
+	});
+</script>
+</html>
