@@ -3,8 +3,6 @@
 	
 }
 .slide{	
-	width: 400px;
-	height: 300px;
 	position: absolute;
 	vertical-align: middle;
 }
@@ -12,13 +10,20 @@
 	list-style: none;
 	float: left;
 }
+.slide ul li img{
+	position: absolute;
+	display: none;
+}
+.slide ul{
+
+}
 .slidepre{
 	background:url(../images/arrow.png) 0 0;
 	position: absolute;
 	width: 38px;
 	height: 48px;
 	float: left;
-	margin-top: 110px;
+	margin-top: 80px;
 	cursor: pointer;
 }
 .slidenext{
@@ -27,7 +32,7 @@
 	right: 0;
 	width: 38px;
 	height: 48px;
-	margin-top: 110px;
+	margin-top: 80px;
 	cursor: pointer;
 }
 .page{
@@ -35,7 +40,7 @@
 	color: #fff;
 	font-family: "微软雅黑";
 	bottom: 10px;
-	width: 400px;	
+	width: 300px;	
 }
 .page ul{
 	float: right;
@@ -48,4 +53,7 @@
 	border-radius: 12px;
 	margin-left: 20px;
 	cursor: pointer;
+}
+.pageactive{
+	color: red;
 }
