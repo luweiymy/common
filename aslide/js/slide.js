@@ -1,6 +1,6 @@
 /**
 	轮播图
-	使用fadeIn和fadeOut，使轮播图有淡入淡出的效果
+	使用animate，使轮播图有从左到右或者是从右到左的动画效果
 */
 $(document).ready(function(){		
 	var count = 4,n;//count为图片的总数	
