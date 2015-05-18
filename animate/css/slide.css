@@ -5,10 +5,12 @@
 .slide{	
 	position: absolute;
 	vertical-align: middle;
+	float: left;
 }
 .slide ul li{
 	list-style: none;
 	float: left;
+
 }
 .slide ul li img{
 	position: absolute;
@@ -36,11 +38,11 @@
 	cursor: pointer;
 }
 .page{
-	position: absolute;
+	position: relative;
 	color: #fff;
 	font-family: "微软雅黑";
-	bottom: 10px;
 	width: 300px;	
+	/*margin-left: -100px;*/
 }
 .page ul{
 	float: right;
