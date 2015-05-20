@@ -20,3 +20,16 @@ input{
 	width: 80px;
 	display: inline-block;
 }
+.f-btn .btn-submit,.f-btn .btn-cancel{
+	background-color: #36c77c;
+	width: 80px;
+	height: 40px;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+}
+.f-btn li{
+	float: left;
+	margin-right: 20px;
+	cursor: pointer;
+}

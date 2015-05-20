@@ -3,6 +3,7 @@
 <head>
 	<title>表单验证</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/verificationUtile.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/verify.css">
 </head>
@@ -19,7 +20,7 @@
 			<ul class="f-ul">
 				<li>
 					<label>昵称：</label>
-					<input type="text" name="nickName">
+					<input type="text" name="nickName" >
 					<span>请输入6-20个字母和数字的组合</span>
 				</li>
 				<li>
@@ -37,15 +38,25 @@
 					<input type="text" name="repassword">
 					<span></span>
 				</li>
+				<li>
+					<label>邮箱：</label>
+					<input type="text" name="repassword">
+					<span></span>
+				</li>
+				<li>
+					<label>日期：</label>
+					<input type="text" name="repassword">
+					<span></span>
+				</li>
 			</ul>
 			<ul class="f-btn">
 				<li>
-					<div class="btn-submit">
-						
-					</div>
-					<div class="btn-cancel">
-						
-					</div>
+					<li class="btn-submit">
+						确定
+					</li>
+					<li class="btn-cancel">
+						取消
+					</li>
 				</li>
 			</ul>
 		</div>
@@ -56,3 +67,8 @@
 </div>
 </body>
 </html>
+<script type="text/javascript">
+	$(".btn-submit").click(function() {
+		$.fn.validation();
+	})
+</script>
