@@ -16,7 +16,7 @@
 		<div class="title">
 			
 		</div>
-		<div class="form">
+		<form class="form" action="" method="get" onsubmit = "return false;">
 			<ul class="f-ul">
 				<li>
 					<label>昵称：</label>
@@ -50,17 +50,17 @@
 				</li>
 			</ul>
 			<ul class="f-btn">
-				<li>
-					<li class="btn-submit">
-						确定
-					</li>
-					<li class="btn-cancel">
-						取消
-					</li>
-				</li>
+				<!-- <li  class="btn-submit">
+					确定
+				</li> -->
+				<!-- <input type="submit" class="btn-submit" value="确定"> -->
+				<input type="submit" class="btn-submit" value="确定" >
+				<!-- <li class="btn-cancel">
+					取消
+				</li> -->
 			</ul>
 		</div>
-	</div>
+	</form>
 	<div class="footer">
 		
 	</div>
@@ -68,7 +68,9 @@
 </body>
 </html>
 <script type="text/javascript">
-	$(".btn-submit").click(function() {
-		$.fn.validation();
-	})
+	// $(document).ready(function(){
+		$(".btn-submit").click(function(){
+			$("form").validation();
+		}) 
+	// });
 </script>
