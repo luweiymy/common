@@ -19,29 +19,31 @@
     var validateField = function(field, valid) { // 验证字段
         var el = $(field), error = false, errorMsg = '';
         for (i = 0; i < valid.length; i++) {
-            var x = true, flag = valid[i], msg = (el.attr(flag + '-message')==undefined)?null:el.attr(flag + '-message');;
+        	console.log(valid[i]);
+            var x = true, flag = valid[i], msg = (el.attr(flag + '-message')==undefined)?null:el.attr(flag + '-message');
             if (flag.substr(0, 1) == '!') {
                 x = false;
                 flag = flag.substr(1, flag.length - 1);
             }
 
             var rules = globalOptions.validRules;
+
             for (j = 0; j < rules.length; j++) {
                 var rule = rules[j];
                 if (flag == rule.name) {
                     if (rule.validate.call(field, el.val()) == x) {
                         error = true;
                         errorMsg = (msg == null)?rule.defaultMsg:msg;
+                        console.log(error);
                         break;
                     }
                 }
             }
-
+            console.log(error);
             if (error) {break;}
         }
 
         var controls = el.parents('.controls'), controlGroup = el.parents('.control-group'), errorEl = controls.children('.help-block, .help-inline');
-
         if (error) {
             if (!controlGroup.hasClass('error')) {
                 if (errorEl.length > 0) {
@@ -76,7 +78,6 @@
 
     var validationForm = function(obj) { // 表单验证方法
         $(obj).submit(function() { // 提交时验证
-        	console.log(formState);
             if (formState) { // 重复提交则返回
                 return false;
             }
@@ -86,6 +87,7 @@
                 var el = $(this), valid = (el.attr('check-type')==undefined)?null:el.attr('check-type').split(' ');
                 if (valid != null && valid.length > 0) {
                     if (!validateField(this, valid)) {
+
                         if (wFocus == false) {
                             scrollTo(0, el[0].offsetTop - 50);
                             wFocus = true;
@@ -105,6 +107,7 @@
                     if (valid != null && valid.length > 0) {
                         el.focus(function() { // 获取焦点时
                             var controls = el.parents('.controls'), controlGroup = el.parents('.control-group'), errorEl = controls.children('.help-block, .help-inline');
+                            console.log(controls);
                             if (errorEl.length > 0) {
                                 var help = controls.data('help-message');
                                 if (help == undefined) {

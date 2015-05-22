@@ -17,18 +17,18 @@
 			
 		</div>
 		<form class="form" action="" method="get" onsubmit = "return false;">
-			<ul class="f-ul">
+			<ul class="f-ul" class="control-group">
 				<li>
 					<label>昵称：</label>
-					<input type="text" name="nickName" >
-					<span>请输入6-20个字母和数字的组合</span>
+					<input type="text" name="nickName" check-type="required" >
+					<span class="help-block"></span>
 				</li>
-				<li>
+			<!-- 	<li>
 					<label>手机号：</label>
 					<input type="text" name="phoneNum">
 					<span>请输入11位的手机号码</span>
-				</li>
-				<li>
+				</li> -->
+				<!-- <li>
 					<label>密码：</label>
 					<input type="text" name="password">
 					<span></span>
@@ -47,14 +47,14 @@
 					<label>日期：</label>
 					<input type="text" name="repassword">
 					<span></span>
-				</li>
+				</li> -->
 			</ul>
 			<ul class="f-btn">
 				<!-- <li  class="btn-submit">
 					确定
 				</li> -->
 				<!-- <input type="submit" class="btn-submit" value="确定"> -->
-				<input type="submit" class="btn-submit" value="确定" >
+				<input type="submit" class="btn-submit" value="确定" check-type="">
 				<!-- <li class="btn-cancel">
 					取消
 				</li> -->
